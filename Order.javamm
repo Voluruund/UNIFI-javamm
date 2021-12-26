@@ -1,0 +1,5 @@
+boolean order(int a, int b, int c, boolean noA) {
+	if(noA && b<c) return noA;
+	if(a<b && b<c) return true;
+	return false;
+}

@@ -1,0 +1,25 @@
+/*
+Scrivere un metodo Java--, chiamato traslaMatrice, che 
+dato in input una matrice T di numeri interi, di dimensione m x n 
+(con m>0 e n>0), e un numero intero y, restituisca una nuova matrice 
+ottenuta applicando alla matrice T una traslazione verticale di y 
+posizioni. 
+ */
+
+int[][] traslaMatrice(int[][] T, int y) {
+	int[][] traslata = new int[T.length][T[0].length]; //nuova matrice
+	//mi riporto ad un caso che so gestire, assumo che y sia positivo
+	//suppongo che sia compreso fra 0 e il numero di righe-1
+	
+	//devo riportare i valori negativi a valori positivi
+	//quindi ci sommo il numero di righe in caso di valore negativo
+	//riportandomi al caso positivo
+	y=T.length+(y%T.length);
+	
+	for(int i=0;i<T.length;i++){
+		for(int j=0;j<T[0].length;j++){
+			traslata[(i+y)%T.length][j]=T[i][j];
+		}
+	} 
+	return traslata;
+}
