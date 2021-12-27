@@ -1,0 +1,12 @@
+
+boolean accoppiata(char[] A) {
+	int m=A.length/2;
+	if(A.length==1) return false;
+	for(int i=0;i<m;i++){
+		if(A[i]!=A[i+m]) return false;
+	}
+	return true;
+}
+
+char[] A = new char[] {'m','a','t','r','i','x','m','a','t','r','i'};
+System.out.println(accoppiata(A));

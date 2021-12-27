@@ -1,0 +1,23 @@
+
+int[][] azzeraAdiacenti(int[][] T, int r, int c) {
+	
+	int n=T[0].length; //col
+	int m=T.length;	   //row
+	
+	//calcolo gli indici
+	int arrUp= (r==0) ? m-1 : r-1;
+	int arrDown= (r==m-1) ? 0 : r+1;
+	int arrLeft= (c==0) ? n-1 : c-1;
+	int arrRight= (c==n-1) ? 0 : c+1;
+	
+	T[arrUp][arrLeft]=0;
+	T[arrUp][c]=0;
+	T[arrUp][arrRight]=0;
+	T[arrDown][arrLeft]=0;
+	T[arrDown][c]=0;
+	T[arrDown][arrRight]=0;
+	T[r][arrLeft]=0;
+	T[r][arrRight]=0;
+	return T;	
+}
+
